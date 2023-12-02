@@ -17,11 +17,11 @@ $ git clone git@github.com:andresroto/go-login.git
 $ git clone https://github.com/andresroto/go-login.git
 ```
 
+## [Steps](steps/)
+
 ```
 $ cd go-login
 ```
-
-## [Steps](steps/)
 
 ```
 $ go run main.go

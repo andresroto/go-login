@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "15909460-2872-4969-b931-d1871567663a",
+		"name": "Go-login",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22862349"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"example\",\n    \"email\": \"example@example.com\",\n    \"password\": \"0000\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"register"
+					]
+				},
+				"description": "#### Register a user\n\nRegisters a new user.\n\n#### PATH\n\n``` json\nPOST {url}/api/register\n\n ```\n\n#### Bad request 404\n\n``` json\n{\n    \"message\": \"User already exists\"\n}\n\n ```\n\n#### **Expected result**\n\n``` json\n{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"example\",\n        \"email\": \"example@example.com\"\n    }\n}\n\n ```"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"example@example.com\",\n    \"password\": \"0000\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"login"
+					]
+				},
+				"description": "#### Login\n\nLogs in a user.\n\n#### PATH\n\n``` json\nPOST {url}/api/login\n\n ```\n\n#### Bad request 400\n\n``` json\n{\n    \"message\": \"Incorrect password\"\n}\n\n ```\n\n#### Bad request 404\n\n``` json\n{\n    \"message\": \"User not found\"\n}\n\n ```\n\n#### **Expected result**\n\n``` json\n{\n    \"message\": \"Successfully logged in\"\n}\n\n ```"
+			},
+			"response": []
+		},
+		{
+			"name": "User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user"
+					]
+				},
+				"description": "#### User\n\nGets the current user.\n\n#### PATH\n\n``` json\nPOST {url}/api/user\n\n ```\n\n#### Unauthorized\n\n``` json\n{\n    \"message\": \"Unauthorized\"\n}\n\n ```\n\n#### **Expected result**\n\n``` json\n{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"example\",\n        \"email\": \"example@example.com\"\n    }\n}\n\n ```"
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"logout"
+					]
+				},
+				"description": "#### Logout\n\nLogs out the current user.\n\n#### PATH\n\n``` json\nPOST {url}/api/logout\n\n ```\n\n#### **Expected result**\n\n``` json\n{\n    \"message\": \"Successfully logged out\"\n}\n\n ```"
+			},
+			"response": []
+		}
+	]
+}
